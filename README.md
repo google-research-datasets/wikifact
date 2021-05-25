@@ -17,7 +17,7 @@ Eg:
 ```
 {
   inputs: "SUBJ{XYZ} was born in OBJ{ABC}",
-  targets: "P19"  # Place of birth,
+  targets: "P19"  # Place of birth, WikiData ID
   subject: "XYZ",
   object: "ABC"
 }
@@ -40,7 +40,41 @@ Eg:
 
 ## Getting the data
 
+To download the data, use the following commands for the three settings:
 
+### Relationship classifier
+This totals around 13GB of data.
+```sh
+mkdir -p wikifact/fact_classification && cd wikifact/fact_classification
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_classification_sentence/fact_classification_sentencedev-00000-of-00001
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_classification_sentence/fact_classification_sentencetest-00000-of-00001
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_classification_sentence/fact_classification_sentencetrain-00000-of-00001
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_classification_sentence/wiki_sum_32768.subword_text_encoder
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_classification_sentence/wiki_fact_classification.target_classes_encoder
+cd ../..
+```
+
+### Fact extraction from paragraphs
+This totals around 1GB of data.
+```sh
+mkdir -p wikifact/fact_extraction_paragraph && cd wikifact/fact_extraction_paragraph
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_extraction_paragraph/fact_extraction_paragraphdev-00000-of-00001
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_extraction_paragraph/fact_extraction_paragraphtest-00000-of-00001
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_extraction_paragraph/fact_extraction_paragraphtrain-00000-of-00001
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_extraction_paragraph/wiki_sum_32768.subword_text_encoder
+cd ../..
+```
+
+### Fact extraction from sentences
+This totals around 500MB of data.
+```sh
+mkdir -p wikifact/fact_extraction_sentence && cd wikifact/fact_extraction_sentence
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_extraction_sentence/fact_extraction_paragraphdev-00000-of-00001
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_extraction_sentence/fact_extraction_paragraphtest-00000-of-00001
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_extraction_sentence/fact_extraction_paragraphtrain-00000-of-00001
+wget -c https://storage.googleapis.com/gresearch/wikifact_ds/fact_extraction_sentence/wiki_sum_32768.subword_text_encoder
+cd ../..
+```
 
 ## Using the data and citing
 You are free to use this dataset with the conditions of the license below. Make sure you
