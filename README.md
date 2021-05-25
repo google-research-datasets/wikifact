@@ -1,6 +1,6 @@
 # WikiFact
-`WikiFact` is a dataset for training relationship classifiers and fact extraction models,
-and accompanies the paper `Assessing The Factual Accuracy of Generated Text` [1]. 
+**WikiFact** is a dataset for training relationship classifiers and fact extraction models,
+and accompanies the paper [Assessing The Factual Accuracy of Generated Text](https://arxiv.org/abs/1905.13322) [1]. 
 
 ## Data format
 The data is available in three settings, each as a Tensorflow.Record collection of
